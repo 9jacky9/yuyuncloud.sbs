@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>渔友手册 - 暖阳垂钓新手上云指南专栏 | 渔云加速器 渔友手册</title>
+  <meta name="description" content="渔云加速器渔友手册，专为新手与出海人士打造的亲民网络宝典，涵盖一键配置开箱、避坑防诈指南、家庭大屏娱乐改造、网络单位科普与外服游戏充值全攻略。">
+  <style>
+    :root {
+      --bg-sand: #fbf9f5;
+      --bg-card: #ffffff;
+      --color-terracotta: #c85a32;
+      --color-terracotta-hover: #b34a24;
+      --color-solar: #e89528;
+      --color-solar-pale: #f9f0e6;
+      --color-earth: #2d2420;
+      --color-muted: #6b5e58;
+      --border-warm: #e8ded4;
+      --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--bg-sand);
+      color: var(--color-earth);
+      font-family: var(--font-main);
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* Nav */
+    .solar-nav-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(251, 249, 245, 0.96);
+      border-bottom: 1px solid var(--border-warm);
+      backdrop-filter: blur(8px);
+    }
+    .solar-nav-box {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .solar-brand-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .solar-logo-svg {
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+    }
+    .solar-title-col {
+      display: flex;
+      flex-direction: column;
+    }
+    .solar-name {
+      font-size: 21px;
+      font-weight: 900;
+      color: var(--color-earth);
+      letter-spacing: -0.5px;
+    }
+    .solar-sub {
+      font-size: 11px;
+      color: var(--color-muted);
+      letter-spacing: 1.2px;
+    }
+    .solar-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+    .solar-nav-links a {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--color-earth);
+      transition: color 0.2s;
+    }
+    .solar-nav-links a:hover, .solar-nav-links a.active {
+      color: var(--color-terracotta);
+    }
+    .solar-login-btn {
+      background: var(--color-terracotta);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 800;
+      padding: 9px 24px;
+      border-radius: 999px;
+      box-shadow: 0 4px 14px rgba(200, 90, 50, 0.2);
+      transition: all 0.2s;
+      flex-shrink: 0;
+    }
+    .solar-login-btn:hover {
+      background: var(--color-terracotta-hover);
+      transform: translateY(-1px);
+    }
+
+    /* Container */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+    .handbook-hero {
+      text-align: center;
+      padding: 40px 0 50px;
+      margin-bottom: 45px;
+      border-bottom: 1px solid var(--border-warm);
+    }
+    .handbook-badge {
+      display: inline-block;
+      background: var(--color-solar-pale);
+      color: var(--color-terracotta);
+      border: 1px solid rgba(200, 90, 50, 0.3);
+      padding: 4px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    .handbook-h1 {
+      font-size: 36px;
+      font-weight: 900;
+      color: var(--color-earth);
+      margin-bottom: 14px;
+    }
+    .handbook-desc {
+      color: var(--color-muted);
+      font-size: 16px;
+      max-width: 680px;
+      margin: 0 auto;
+      line-height: 1.75;
+    }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+    .solar-article-card {
+      background: #ffffff;
+      border: 1px solid var(--border-warm);
+      border-radius: 12px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 18px rgba(45, 36, 32, 0.03);
+      transition: all 0.25s;
+    }
+    .solar-article-card:hover {
+      border-color: var(--color-terracotta);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(200, 90, 50, 0.08);
+    }
+    .card-meta-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13px;
+      color: var(--color-muted);
+      margin-bottom: 14px;
+    }
+    .card-tag-pill {
+      background: var(--color-solar-pale);
+      color: var(--color-terracotta);
+      padding: 3px 9px;
+      border-radius: 4px;
+      font-weight: 800;
+      font-size: 11.5px;
+    }
+    .card-h2 {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--color-earth);
+      margin-bottom: 12px;
+      line-height: 1.45;
+    }
+    .card-summary-p {
+      font-size: 14.5px;
+      color: var(--color-muted);
+      line-height: 1.7;
+      margin-bottom: 24px;
+      flex-grow: 1;
+    }
+    .card-read-anchor {
+      color: var(--color-terracotta);
+      font-weight: 800;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Article View */
+    .solar-crumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13.5px;
+      color: var(--color-muted);
+      margin-bottom: 30px;
+    }
+    .solar-crumb a:hover { color: var(--color-terracotta); }
+    .article-header-wrap {
+      margin-bottom: 35px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid var(--border-warm);
+    }
+    .article-h1 {
+      font-size: 34px;
+      font-weight: 900;
+      color: var(--color-earth);
+      line-height: 1.35;
+      margin-bottom: 18px;
+    }
+    .article-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 13px;
+      color: var(--color-muted);
+      flex-wrap: wrap;
+    }
+    .article-card-box {
+      background: #ffffff;
+      border: 1px solid var(--border-warm);
+      border-radius: 14px;
+      padding: 50px;
+      font-size: 16px;
+      line-height: 1.85;
+      color: #3e332e;
+      box-shadow: 0 4px 22px rgba(45, 36, 32, 0.03);
+    }
+    .article-card-box h2 {
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--color-earth);
+      margin: 40px 0 18px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border-warm);
+    }
+    .article-card-box h2:first-child { margin-top: 0; }
+    .article-card-box h3 {
+      font-size: 19px;
+      font-weight: 800;
+      color: var(--color-terracotta);
+      margin: 28px 0 14px;
+    }
+    .article-card-box p {
+      margin-bottom: 22px;
+      text-align: justify;
+    }
+    .article-card-box ul, .article-card-box ol {
+      margin: 0 0 24px 24px;
+    }
+    .article-card-box li {
+      margin-bottom: 10px;
+    }
+
+    /* Dedicated Terracotta Hyperlink Styling */
+    .content-link, .content-link:visited {
+      color: var(--color-terracotta) !important;
+      font-weight: 700;
+      text-decoration: underline !important;
+      text-underline-offset: 4px;
+      transition: opacity 0.2s;
+    }
+    .content-link:hover {
+      opacity: 0.85;
+    }
+
+    .article-footer-bar {
+      margin-top: 50px;
+      padding-top: 25px;
+      border-top: 1px dashed var(--border-warm);
+      font-size: 13.5px;
+      color: var(--color-muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    /* Footer */
+    .strict-footer-solar {
+      background: #f4ede3;
+      border-top: 1px solid var(--border-warm);
+      padding: 40px 24px;
+      text-align: center;
+    }
+    .footer-four-solar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 36px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .footer-four-solar a {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--color-muted);
+      transition: color 0.2s;
+    }
+    .footer-four-solar a:hover { color: var(--color-earth); }
+    .footer-solar-copy {
+      font-size: 12.5px;
+      color: #8c7b74;
+    }
+
+    @media (max-width: 860px) {
+      .solar-nav-links { display: none; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .article-card-box { padding: 28px 20px; }
+      .article-h1 { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Nav -->
+  <header class="solar-nav-bar">
+    <div class="solar-nav-box">
+      <a href="index.html" class="solar-brand-box">
+        <svg class="solar-logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="32" fill="#c85a32"/>
+          <path d="M50 10 L50 20 M50 80 L50 90 M10 50 L20 50 M80 50 L90 50" stroke="#e89528" stroke-width="3" stroke-linecap="round"/>
+          <path d="M28 72 C 34 35, 62 25, 75 35" stroke="#fbf9f5" stroke-width="2"/>
+          <path d="M42 56 C 52 46, 64 50, 68 56 C 60 62, 50 64, 42 56 Z" fill="#ffffff"/>
+          <circle cx="64" cy="54" r="1.5" fill="#c85a32"/>
+          <path d="M42 56 L 35 50 L 36 62 Z" fill="#e89528"/>
+        </svg>
+        <div class="solar-title-col">
+          <div class="solar-name">渔云加速器</div>
+          <div class="solar-sub">暖阳垂钓·新手与出海首选</div>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="solar-nav-links">
+          <li><a href="index.html#advantages">暖阳优势</a></li>
+          <li><a href="index.html#streaming">娱乐智能</a></li>
+          <li><a href="index.html#pricing">超值套餐</a></li>
+          <li><a href="index.html#faq">新手答疑</a></li>
+          <li><a href="index.html#reviews">暖心评价</a></li>
+          <li><a href="handbook.html" class="active">渔友手册</a></li>
+        </ul>
+      </nav>
+
+      <a href="https://ww012.twilightaff.com/#/?code=A56DH1Af" target="_blank" rel="nofollow" class="solar-login-btn">
+        登录控制台
+      </a>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="handbook-hero">
+      <div class="handbook-badge">BEGINNER & HANDBOOK</div>
+      <h1 class="handbook-h1">渔友手册</h1>
+      <p class="handbook-desc">
+        暖阳金鱼随心漫游，新手小白轻松上云。汇聚全网最接地气的跨国网络常识、避坑防诈警示、客厅娱乐改造与外服游戏安全探索指南。
+      </p>
+    </div>
+
+    <section class="cards-grid">
+
+      <article class="solar-article-card">
+        <div class="card-meta-box">
+          <span class="card-tag-pill">新手上云实测</span>
+          <span>2026-10-12</span>
+          <span>•</span>
+          <span>暖滩测评小队</span>
+        </div>
+        <h2 class="card-h2"><a href="yuyun-beginner-friendly-handbook.html">渔云加速器新手全方位上手评测：零门槛一键配置与极致顺滑体验</a></h2>
+        <p class="card-summary-p">第一次接触跨国网络加速器被复杂参数劝退？本文带您零门槛实测渔云加速器，体验像闲坐暖滩惬意垂钓般的简单与顺滑。</p>
+        <a href="yuyun-beginner-friendly-handbook.html" class="card-read-anchor">阅读指南 &rarr;</a>
+      </article>
+      <article class="solar-article-card">
+        <div class="card-meta-box">
+          <span class="card-tag-pill">消费避坑必读</span>
+          <span>2026-10-10</span>
+          <span>•</span>
+          <span>网络反诈观察员</span>
+        </div>
+        <h2 class="card-h2"><a href="free-proxy-traps-security-risks.html">小白防坑避雷指南：免费梯子、破解机场与低价垃圾节点的隐形陷阱</a></h2>
+        <p class="card-summary-p">免费的往往是最昂贵的。本文为你揭秘黑心免费代理倒卖个人隐私与垃圾节点两个月跑路的黑产内幕，手把手教你安全避坑。</p>
+        <a href="free-proxy-traps-security-risks.html" class="card-read-anchor">阅读指南 &rarr;</a>
+      </article>
+      <article class="solar-article-card">
+        <div class="card-meta-box">
+          <span class="card-tag-pill">客厅娱乐改造</span>
+          <span>2026-10-07</span>
+          <span>•</span>
+          <span>家庭数码极客</span>
+        </div>
+        <h2 class="card-h2"><a href="smart-tv-console-gaming-home-setup.html">家庭娱乐全家桶网络改造：Apple TV、奈飞与任天堂Switch联网畅玩</a></h2>
+        <p class="card-summary-p">家里大电视看不了 4K 奈飞，Switch 联机总报错？本文为你梳理一套优雅实用的客厅网络全家桶改造方案，让全家尽享大屏视听。</p>
+        <a href="smart-tv-console-gaming-home-setup.html" class="card-read-anchor">阅读指南 &rarr;</a>
+      </article>
+      <article class="solar-article-card">
+        <div class="card-meta-box">
+          <span class="card-tag-pill">网络常识科普</span>
+          <span>2026-10-04</span>
+          <span>•</span>
+          <span>科普网络讲堂</span>
+        </div>
+        <h2 class="card-h2"><a href="bandwidth-speed-units-latency-metrics.html">跨境网络速度单位大普及：Mbps、MB/s与Ping值抖动到底怎么看</a></h2>
+        <p class="card-summary-p">办了千兆宽带为什么下载只有几十兆？Ping 很低为什么打游戏依然卡顿？本文用最通俗的语言，带你彻底读懂网络速度与质量核心指标。</p>
+        <a href="bandwidth-speed-units-latency-metrics.html" class="card-read-anchor">阅读指南 &rarr;</a>
+      </article>
+      <article class="solar-article-card">
+        <div class="card-meta-box">
+          <span class="card-tag-pill">游戏跨区安全</span>
+          <span>2026-10-02</span>
+          <span>•</span>
+          <span>资深主机收藏家</span>
+        </div>
+        <h2 class="card-h2"><a href="cross-region-gaming-store-payment-guide.html">外服游戏氪金与跨区锁区终极攻略：Steam土阿区、日服手游与国际服指南</a></h2>
+        <p class="card-summary-p">跨区买游戏便宜一半，但一不小心就会遭遇红信封号？本文为外服玩家梳理最安全稳妥的跨区充值与游戏引继防封完整守则。</p>
+        <a href="cross-region-gaming-store-payment-guide.html" class="card-read-anchor">阅读指南 &rarr;</a>
+      </article>
+      <article class="solar-article-card">
+        <div class="card-meta-box">
+          <span class="card-tag-pill">未来网络前瞻</span>
+          <span>2026-10-01</span>
+          <span>•</span>
+          <span>未来数字研究所</span>
+        </div>
+        <h2 class="card-h2"><a href="edge-computing-ai-smart-routing-future.html">未来网络加速新形态：边缘计算、AI智能动态调优与全球互联前景</a></h2>
+        <p class="card-summary-p">从简单跳板到 AI 自主预测路由、从海底光缆到星链天地互通。本文带你俯瞰未来十年全球网络加速技术的颠覆性演进蓝图。</p>
+        <a href="edge-computing-ai-smart-routing-future.html" class="card-read-anchor">阅读指南 &rarr;</a>
+      </article>
+    </section>
+  </main>
+
+  <!-- Strict Footer: ONLY 4 titles -->
+  <footer class="strict-footer-solar">
+    <div class="footer-four-solar">
+      <a href="sitemap.html" target="_blank">网站地图</a>
+      <a href="about.html" target="_blank">关于我们</a>
+      <a href="terms.html" target="_blank">服务条款</a>
+      <a href="privacy.html" target="_blank">隐私政策</a>
+    </div>
+    <div class="footer-solar-copy">
+      &copy; 2026 渔云加速器 yuyuncloud.sbs 版权所有 | 暖阳垂钓新手首选网络
+    </div>
+  </footer>
+
+</body>
+</html>
